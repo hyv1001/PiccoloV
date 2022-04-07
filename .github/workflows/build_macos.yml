@@ -1,0 +1,21 @@
+name: Build macOS
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        configuration: [debug, release]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+
+      - name: Build
+        run: ./build_macOS.sh ${{matrix.configuration}}

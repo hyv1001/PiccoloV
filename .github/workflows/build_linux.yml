@@ -1,0 +1,30 @@
+name: Build Linux
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration: [debug, release]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+
+      - name: Install dependencies
+        run: |
+            sudo apt install libxrandr-dev
+            sudo apt install libxinerama-dev
+            sudo apt install libxcursor-dev
+            sudo apt install libxi-dev
+            sudo apt install libglvnd-dev
+            sudo apt install libvulkan-dev
+        
+      - name: Build
+        run: ./build_linux.sh ${{matrix.configuration}} 
