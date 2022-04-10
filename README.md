@@ -83,6 +83,6 @@ You can execute the **build_linux.sh** to build the binaries.
 
 ## Contributors
 
-<a href="https://github.com/BoomingTech/Pilot/graphs/contributors"><img src="https://contrib.rocks/image?repo=BoomingTech/Pilo" width="800px"></a>
+<a href="https://github.com/BoomingTech/Pilot/graphs/contributors"><img src="https://contrib.rocks/image?repo=BoomingTech/Pilot" width="800px"></a>
 
 *Contributor avatars are randomly shuffled.*
