@@ -39,3 +39,4 @@ ${lua_SOURCE_DIR_}/lzio.c
 )
 
 target_include_directories(lua_static PUBLIC ${lua_SOURCE_DIR_})
+set_target_properties(lua_static PROPERTIES FOLDER ${third_party_folder}/lua)

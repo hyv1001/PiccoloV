@@ -50,6 +50,13 @@ if(NOT TARGET Jolt)
 
     add_subdirectory(JoltPhysics/Build)
 
+    if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+        target_compile_options(Jolt PRIVATE 
+            "-D__STDC_WANT_SECURE_LIB__"
+            "/wd5267"
+            "/wd5266")
+    endif()
+
     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         include(CheckCXXCompilerFlag)
         check_cxx_compiler_flag("-Wno-unqualified-std-cast-call" COMPILER_CHECK_UNQUALIFIED)
